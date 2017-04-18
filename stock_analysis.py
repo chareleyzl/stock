@@ -18,7 +18,7 @@ ts.get_report_data(2016,3)
 #上证综指
 sh = pd.read_csv('e:\stock\SH#999999.txt',delimiter='\t',encoding='utf-8')
 sh['收盘']
-#浦发银行测试
+#
 
 #dateparse = lambda dates: pd.datetime.strptime(dates,'%Y/%m/%d') 
 stock = pd.read_csv('E:\\stock\\ls\\SZ#300085.txt',delimiter='\t',header=1,index_col=0,parse_dates=True,encoding='gb2312')
