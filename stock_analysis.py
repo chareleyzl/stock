@@ -18,6 +18,7 @@ ts.get_report_data(2016,3)
 #上证综指
 sh = pd.read_csv('e:\stock\SH#999999.txt',delimiter='\t',encoding='utf-8')
 sh['收盘']
+#浦发银行测试
 
 #dateparse = lambda dates: pd.datetime.strptime(dates,'%Y/%m/%d') 
 stock = pd.read_csv('E:\\stock\\ls\\SZ#300085.txt',delimiter='\t',header=1,index_col=0,parse_dates=True,encoding='gb2312')
@@ -33,9 +34,9 @@ while i < 2017:
     rpt.to_csv('E:\\stock\\fin_rpt\\rpt200604_1604',mode='a+',encoding='utf-8')
     i+=1
     
-##寻找近10年高成长股；选取高成长股的业绩增长倍数进行分析。获取的是10年所有公司每天股价和年报。
-##将来扩展为业绩股价关联性；再分析股指投资收益，目的是用数据衡量价值投资在A股市场的价值，为选择提供依据。
-##最重要的是，业绩高成长，是否反映为股价，这是决策依据。
+##目标：寻找高成长股与业绩增长的关联关系，衡量价值投资在A股市场的价值。
+##方法：分别清理业绩和股价，读入数据框综合分析：先看业绩高成长股价表现，再看股价高成长业绩表现，最后分析关联度。
+##误差分析与控制：
 def stock_finder(years=10,times=10,category='ls'):
     import pandas as pd
     import glob
@@ -70,7 +71,7 @@ def stock_finder(years=10,times=10,category='ls'):
                     f.write(stock_code+' '+stock_name.encode('gb2312')+' '+str(jan_times)+' '+str(mar_times)+' '+str(net_times)+' '+str(net_times_c)+'\n')   
 
 
-        
+
 
 
 
