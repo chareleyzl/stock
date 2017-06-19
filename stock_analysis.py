@@ -46,7 +46,7 @@ def stock_finder(years=10,times=10,category='ls'):
         f.truncate
         f.write('code  name  times1  times3  net_profit_times  net_profit_times_check\n')
     rpt = pd.read_csv('E:\\stock\\fin_rpt\\rpt200604_1604',header=0)#读取10年来年报大全
-    for filename in txt_filenames:
+    for filename in txt_filenames:                                  #循环读取个股股价
         stock = pd.read_csv(filename,delimiter='\t',header=1,index_col=0,parse_dates=True,encoding='gb2312')
         try: 
             jan0 = stock.loc[day_list[years][0]][2] 
