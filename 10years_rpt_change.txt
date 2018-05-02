@@ -1,1 +1,0 @@
-,code,name,times_3,times_4,net30,net40,net31,net41
